@@ -1,0 +1,23 @@
+.side-list{
+    width: 30%;
+    /* height:fit-content; */
+    /* background-color: yellow; */
+    padding: 1rem;
+}
+
+.list-btn{
+    display: flex;
+}
+
+.featured-inshort{
+    height: 200vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.scroll {
+    width:100%;
+    height: 70%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
+}

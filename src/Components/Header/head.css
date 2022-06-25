@@ -1,0 +1,26 @@
+.navbar{
+    background-color: teal;
+    min-height: 3rem;
+    width: 100%;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.flexCenter{
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+nav ul{
+    display: flex;
+}
+
+li{
+    padding: .5rem;
+    font-weight: 700;
+}

@@ -1,10 +1,46 @@
-import React from 'react'
-import './list.css'
+import React, { useEffect, useState } from "react";
+import "./list.css";
+
+import MiniCard from "./MiniCard";
+
+import { StyledButton } from "./button.style";
+import { getHotelData } from "../../API/Hotels";
 
 function List() {
+  const [hotels, setHotels] = useState([]);
+  const [coordinates, setCoordinates] = useState({});
+
+  navigator.geolocation.getCurrentPosition(function (position) {
+    setCoordinates({
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+    });
+  });
+  // console.log(coordinates);
+
+  useEffect(() => {
+    getHotelData(coordinates).then((data) => setHotels(data));
+    console.log(hotels)
+  }, []);
+
   return (
-    <div>List</div>
-  )
+    <div className="side-list">
+      <div className="side-list-header">
+        <h2>Places around you</h2>
+        <div className="list-btn">
+          <StyledButton>Food</StyledButton>
+          <StyledButton>Hotel</StyledButton>
+          <StyledButton>Travel</StyledButton>
+        </div>
+      </div>
+      <div className="featured-inshort scroll">
+        {/* {hotels?.map(hotel=><p>{hotel.place}</p>)} */}
+        {/* {hotels?.map((hotel) => (
+          <MiniCard place={hotel.place}/>
+        ))} */}
+      </div>
+    </div>
+  );
 }
 
-export default List
+export default List;
