@@ -4,7 +4,7 @@ import './head.css'
 function Head() {
   return (
     <div className='navbar flexCenter'>
-        <h3 className='title'>TouristHub</h3>
+        <h2 className='title'>TouristHub</h2>
         <nav>
             <ul>
                 <li>Food</li>

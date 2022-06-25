@@ -20,24 +20,36 @@ function List() {
 
   useEffect(() => {
     getHotelData(coordinates).then((data) => setHotels(data));
-    console.log(hotels)
+
+    // console.log(hotels);
   }, []);
 
+  
+  
+
+
   return (
-    <div className="side-list">
-      <div className="side-list-header">
-        <h2>Places around you</h2>
-        <div className="list-btn">
-          <StyledButton>Food</StyledButton>
-          <StyledButton>Hotel</StyledButton>
-          <StyledButton>Travel</StyledButton>
+    <div className="page">
+      <div className="side-list">
+        <div className="side-list-header">
+          <h2>Places around you</h2>
+          <div className="list-btn">
+            <StyledButton>Food</StyledButton>
+            <StyledButton>Hotel</StyledButton>
+            <StyledButton>Travel</StyledButton>
+          </div>
         </div>
-      </div>
-      <div className="featured-inshort scroll">
-        {/* {hotels?.map(hotel=><p>{hotel.place}</p>)} */}
-        {/* {hotels?.map((hotel) => (
-          <MiniCard place={hotel.place}/>
-        ))} */}
+        <div className="featured-inshort scroll">
+          {hotels?.map((hotel) => (
+            <MiniCard
+              imageURL={hotel?.photo?.images?.small?.url}
+              name={hotel?.name}
+              rating={hotel?.rating}
+              availablePlaces={hotel?.neighborhood_info}
+            />
+          ))}
+
+        </div>
       </div>
     </div>
   );

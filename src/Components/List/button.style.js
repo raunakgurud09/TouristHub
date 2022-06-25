@@ -12,11 +12,12 @@ export const StyledButton = styled.button`
   font-weight: 800;
   line-height: normal;
   margin: 1rem;
-  min-height: 60px;
-  min-width: 10px;
+  
+  overflow: hidden;
+
   outline: none;
   font-family: inherit;
-  /* padding: 16px 24px; */
+  padding: .5rem 1rem;
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
